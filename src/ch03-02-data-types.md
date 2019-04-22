@@ -12,7 +12,7 @@ type using `parse` in the [“Comparing the Guess to the Secret Number”]
 [comparing-the-guess-to-the-secret-number]<!-- ignore --> section in Chapter 2,
 we must add a type annotation, like this:
 
-```rust
+```rust,ignore
 let guess: u32 = "42".parse().expect("Not a number!");
 ```
 
@@ -131,7 +131,7 @@ Here’s an example that shows floating-point numbers in action:
 
 <span class="filename">Filename: src/main.rs</span>
 
-```rust
+```rust,ignore
 fn main() {
     let x = 2.0; // f64
 
@@ -150,7 +150,7 @@ The following code shows how you’d use each one in a `let` statement:
 
 <span class="filename">Filename: src/main.rs</span>
 
-```rust
+```rust,ignore
 fn main() {
     // addition
     let sum = 5 + 10;
@@ -181,7 +181,7 @@ Rust is specified using `bool`. For example:
 
 <span class="filename">Filename: src/main.rs</span>
 
-```rust
+```rust,ignore
 fn main() {
     let t = true;
 
@@ -202,7 +202,7 @@ single quotes, as opposed to string literals, which use double quotes.)
 
 <span class="filename">Filename: src/main.rs</span>
 
-```rust
+```rust,ignore
 fn main() {
     let c = 'z';
     let z = 'ℤ';
@@ -238,7 +238,7 @@ type annotations in this example:
 
 <span class="filename">Filename: src/main.rs</span>
 
-```rust
+```rust,ignore
 fn main() {
     let tup: (i32, f64, u8) = (500, 6.4, 1);
 }
@@ -272,7 +272,7 @@ want to access. For example:
 
 <span class="filename">Filename: src/main.rs</span>
 
-```rust
+```rust,ignore
 fn main() {
     let x: (i32, f64, u8) = (500, 6.4, 1);
 
@@ -300,7 +300,7 @@ inside square brackets:
 
 <span class="filename">Filename: src/main.rs</span>
 
-```rust
+```rust,ignore
 fn main() {
     let a = [1, 2, 3, 4, 5];
 }
@@ -319,7 +319,7 @@ program that needs to know the names of the months of the year. It’s very
 unlikely that such a program will need to add or remove months, so you can use
 an array because you know it will always contain 12 items:
 
-```rust
+```rust,ignore
 let months = ["January", "February", "March", "April", "May", "June", "July",
               "August", "September", "October", "November", "December"];
 ```
@@ -328,7 +328,7 @@ You would write an array’s type by using square brackets, and within the
 brackets include the type of each element, a semicolon, and then the number of
 elements in the array, like so:
 
-```rust
+```rust,ignore
 let a: [i32; 5] = [1, 2, 3, 4, 5];
 ```
 
@@ -340,7 +340,7 @@ initializing an array: if you want to create an array that contains the same
 value for each element, you can specify the initial value, followed by a
 semicolon, and then the length of the array in square brackets, as shown here:
 
-```rust
+```rust,ignore
 let a = [3; 5];
 ```
 
@@ -355,7 +355,7 @@ elements of an array using indexing, like this:
 
 <span class="filename">Filename: src/main.rs</span>
 
-```rust
+```rust,ignore
 fn main() {
     let a = [1, 2, 3, 4, 5];
 
