@@ -90,7 +90,8 @@ fn main() {
 
     let mut guess = String::new();
 
-    io::stdin().read_line(&mut guess)
+    io::stdin()
+        .read_line(&mut guess)
         .expect("Failed to read line");
 
     println!("You guessed: {}", guess);
@@ -197,7 +198,8 @@ library with `use std::io;` on the first line of the program. Now we’ll call
 the `stdin` function from the `io` module:
 
 ```rust,ignore
-io::stdin().read_line(&mut guess)
+io::stdin()
+    .read_line(&mut guess)
     .expect("Failed to read line");
 ```
 
@@ -517,8 +519,8 @@ Now that you’ve added the `rand` crate to *Cargo.toml*, let’s start using
 <span class="filename">Filename: src/main.rs</span>
 
 ```rust,ignore
-use std::io;
 use rand::Rng;
+use std::io;
 
 fn main() {
     println!("Guess the number!");
@@ -531,7 +533,8 @@ fn main() {
 
     let mut guess = String::new();
 
-    io::stdin().read_line(&mut guess)
+    io::stdin()
+        .read_line(&mut guess)
         .expect("Failed to read line");
 
     println!("You guessed: {}", guess);
@@ -601,9 +604,9 @@ will explain.
 <span class="filename">Filename: src/main.rs</span>
 
 ```rust,ignore,does_not_compile
+use rand::Rng;
 use std::io;
 use std::cmp::Ordering;
-use rand::Rng;
 
 fn main() {
 
@@ -699,11 +702,11 @@ do that by adding the following two lines to the `main` function body:
 
     let mut guess = String::new();
 
-    io::stdin().read_line(&mut guess)
+    io::stdin()
+        .read_line(&mut guess)
         .expect("Failed to read line");
 
-    let guess: u32 = guess.trim().parse()
-        .expect("Please type a number!");
+    let guess: u32 = guess.trim().parse().expect("Please type a number!");
 
     println!("You guessed: {}", guess);
 
@@ -715,11 +718,10 @@ do that by adding the following two lines to the `main` function body:
 }
 ```
 
-The two new lines are:
+The new line is:
 
 ```rust,ignore
-let guess: u32 = guess.trim().parse()
-    .expect("Please type a number!");
+let guess: u32 = guess.trim().parse().expect("Please type a number!");
 ```
 
 We create a variable named `guess`. But wait, doesn’t the program already have
@@ -896,7 +898,8 @@ is converted from a `String` to a `u32`, as shown in Listing 2-5.
 ```rust,ignore
 // --snip--
 
-io::stdin().read_line(&mut guess)
+io::stdin()
+    .read_line(&mut guess)
     .expect("Failed to read line");
 
 let guess: u32 = match guess.trim().parse() {
@@ -966,9 +969,9 @@ secret number. Listing 2-6 shows the final code.
 <span class="filename">Filename: src/main.rs</span>
 
 ```rust,ignore
-use std::io;
-use std::cmp::Ordering;
 use rand::Rng;
+use std::cmp::Ordering;
+use std::io;
 
 fn main() {
     println!("Guess the number!");
@@ -980,7 +983,8 @@ fn main() {
 
         let mut guess = String::new();
 
-        io::stdin().read_line(&mut guess)
+        io::stdin()
+            .read_line(&mut guess)
             .expect("Failed to read line");
 
         let guess: u32 = match guess.trim().parse() {
