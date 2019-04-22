@@ -320,8 +320,20 @@ unlikely that such a program will need to add or remove months, so you can use
 an array because you know it will always contain 12 items:
 
 ```rust,ignore
-let months = ["January", "February", "March", "April", "May", "June", "July",
-              "August", "September", "October", "November", "December"];
+let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+];
 ```
 
 You would write an array’s type by using square brackets, and within the
